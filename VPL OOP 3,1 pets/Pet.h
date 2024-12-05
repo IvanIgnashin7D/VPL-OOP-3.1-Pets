@@ -11,9 +11,9 @@ private:
 public:
 	Pet();
 	Pet(std::string type, std::string name, std::string voice, int weight);
-	std::string gettype();
-	std::string getname();
-	std::string getvoice();
-	int getweight();
+	std::string gettype() const;
+	std::string getname() const;
+	std::string getvoice() const;
+	int getweight() const;
 };
 

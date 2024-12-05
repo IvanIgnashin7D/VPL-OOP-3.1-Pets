@@ -1,9 +1,16 @@
 #include "FamilyPets.h"
 #include <iostream>
+#include <vector>
+#include "Pet.h"
 
 FamilyPets::FamilyPets(int maxPets)
 {
 	maxPets_ = maxPets;
+}
+
+const std::vector<Pet>& FamilyPets::getPets() const
+{
+	return pets_;
 }
 
 void FamilyPets::addPet(std::string type, std::string name, std::string voice, int weight)
@@ -13,14 +20,14 @@ void FamilyPets::addPet(std::string type, std::string name, std::string voice, i
 
 void FamilyPets::names()
 {
-	for (int i; i < maxPets_; i++)
-		std::cout << pets_[i].getname();
+	for (int i = 0; i < maxPets_; i++)
+		std::cout << pets_[i].getname() << ' ';
 }
 
 void FamilyPets::voice()
 {
-	for (int i; i < maxPets_; i++)
-		std::cout << pets_[i].getvoice();
+	for (int i = 0; i < maxPets_; i++)
+		std::cout << pets_[i].getvoice() << ' ';
 }
 
 int FamilyPets::getNumberRepetitionsName(std::string name)
@@ -45,4 +52,14 @@ std::string FamilyPets::findTheEasiest()
 		}
 	}
 	return res;
+}
+
+std::ostream& operator<<(std::ostream& stream, const FamilyPets& familyPets) {
+	for (int i = 0; i < familyPets.getPets().size(); i++) {
+		stream << familyPets.getPets()[i].gettype() << ' ';
+		stream << familyPets.getPets()[i].getname() << ' ';
+		stream << familyPets.getPets()[i].getvoice() << ' ';
+		stream << familyPets.getPets()[i].getweight() << '\n';
+	}
+	return stream;
 }

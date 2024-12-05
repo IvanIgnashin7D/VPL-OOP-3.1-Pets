@@ -8,22 +8,22 @@ Pet::Pet(std::string type, std::string name, std::string voice, int weight)
 	weight_ = weight;
 }
 
-std::string Pet::gettype()
+std::string Pet::gettype() const
 {
 	return type_;
 }
 
-std::string Pet::getname()
+std::string Pet::getname() const 
 {
 	return name_;
 }
 
-std::string Pet::getvoice()
+std::string Pet::getvoice() const 
 {
 	return voice_;
 }
 
-int Pet::getweight()
+int Pet::getweight() const
 {
 	return weight_;
 }

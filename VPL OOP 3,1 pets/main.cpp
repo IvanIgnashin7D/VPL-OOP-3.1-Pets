@@ -19,4 +19,5 @@ int main() {
 			break;
 		familyPets.addPet(type, name, voice, weight);
 	}
+	std::cout << familyPets;
 }
