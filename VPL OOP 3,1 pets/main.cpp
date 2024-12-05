@@ -19,5 +19,13 @@ int main() {
 			break;
 		familyPets.addPet(type, name, voice, weight);
 	}
+	familyPets.names();
+	familyPets.voice();
+
+	std::string name;
+	std::cin >> name;
+	std::cout << familyPets.getNumberRepetitionsName(name) << '\n';
+
+	std::cout << familyPets.findTheEasiest() << '\n';
 	std::cout << familyPets;
 }

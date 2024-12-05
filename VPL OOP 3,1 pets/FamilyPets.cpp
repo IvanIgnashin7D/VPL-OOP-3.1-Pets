@@ -20,20 +20,22 @@ void FamilyPets::addPet(std::string type, std::string name, std::string voice, i
 
 void FamilyPets::names()
 {
-	for (int i = 0; i < maxPets_; i++)
+	for (int i = 0; i < pets_.size(); i++)
 		std::cout << pets_[i].getname() << ' ';
+	std::cout << '\n';
 }
 
 void FamilyPets::voice()
 {
-	for (int i = 0; i < maxPets_; i++)
+	for (int i = 0; i < pets_.size(); i++)
 		std::cout << pets_[i].getvoice() << ' ';
+	std::cout << '\n';
 }
 
 int FamilyPets::getNumberRepetitionsName(std::string name)
 {
 	int res = -1;
-	for (int i = 0; i < maxPets_; i++) {
+	for (int i = 0; i < pets_.size(); i++) {
 		if (pets_[i].getname() == name)
 			res++;
 	}
@@ -45,7 +47,7 @@ std::string FamilyPets::findTheEasiest()
 	std::string easiest;
 	int minWeight = pets_[0].getweight();
 	std::string res = pets_[0].getname();
-	for (int i = 1; i < maxPets_; i++) {
+	for (int i = 1; i < pets_.size(); i++) {
 		if (minWeight > pets_[i].getweight()) {
 			minWeight = pets_[i].getweight();
 			res = pets_[i].getname();
